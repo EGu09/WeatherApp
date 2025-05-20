@@ -1,88 +1,57 @@
-# Weather App - EEP 523 Homework Assignment 3
+# Weather App
+## EEP 523 – Homework Assignment 3
 
-## Overview
+### Overview
+This Android application retrieves and displays real-time weather information for any city using the OpenWeatherMap API (v2.5). Upon launch, the app displays weather data for the user's current location. Users can also search for weather details by entering a city name.
 
-This Weather App is a simple, elegant mobile application built with Kotlin for Android that allows users to check current weather conditions for cities around the world. The app fetches real-time weather data from the OpenWeatherMap API and displays it in a clean, user-friendly interface.
-
-## Features
-
-- Search for weather by city name
-- Display of current weather conditions including:
+### Features
+- Displays current weather information for the user's device location (e.g., Seattle by default).
+- Allows users to enter a city name and retrieve weather information.
+- Displays the following weather details:
+  - City name
   - Current temperature
-  - Weather condition (sunny, cloudy, etc.)
-  - Min/max temperature
+  - Weather condition (e.g., cloudy, sunny)
+  - Minimum and maximum temperatures
   - Sunrise and sunset times
   - Wind speed
-  - Air pressure
-  - Humidity percentage
-- Automatic loading of local weather on startup
-- Error handling for invalid city names, network issues, etc.
-- Clean UI with responsive design
+  - Pressure
+  - Humidity
+- Error handling includes:
+  - Empty input field: Displays "City Name cannot be blank"
+  - Invalid city name: Displays "City not found"
+  - No internet connection: Displays "Please connect to internet"
 
-## Architecture
+### UI Design
+- Designed using Figma.
+- Layout includes:
+  - A weather information card showing all required data.
+  - A text input field for entering a city name.
+  - A button to trigger the API call.
+  - Visual feedback for error scenarios (e.g., toast messages).
 
-The application follows the MVVM (Model-View-ViewModel) architecture pattern:
-
-- **Model**: Data classes that represent the structure of the API response
-- **View**: XML layouts that define the UI
-- **ViewModel**: Manages UI-related data and handles business logic
-
-## Development Process
+### How It Works
+1. On launch, the app requests location permission.
+2. Uses FusedLocationProviderClient to get current device coordinates.
+3. Makes a network request to the OpenWeatherMap API using Retrofit.
+4. Parses the response and displays data using model classes.
+5. Updates the UI on the main thread.
 
 ### Time Spent
+- Total time spent: approximately 12 hours
+  - UI/UX design in Figma: 2 hours
+  - API integration and data parsing: 3 hours
+  - Location services integration: 2 hours
+  - UI implementation and error handling: 3 hours
+  - Testing and documentation: 2 hours
 
-The app took approximately 10 hours to complete:
-- 2 hours for initial setup and API integration
-- 3 hours for UI design and implementation
-- 2 hours for error handling and edge cases
-- 2 hours for refinement and testing
-- 1 hour for documentation
+### Challenges Faced
+- Handling asynchronous location and network calls efficiently.
+- Converting sunrise and sunset UNIX timestamps to human-readable format.
+- Mapping complex JSON response into Kotlin data classes.
+- Ensuring UI updates occur on the main thread without lag.
 
-### Most Challenging Parts
-
-1. **JSON Parsing**: Dealing with nested JSON objects in the API response required careful model design. The "clouds" field in particular was tricky as it was an object rather than a primitive type.
-
-2. **Error Handling**: Implementing robust error handling for various scenarios (invalid city, no internet, etc.) while maintaining a good user experience was challenging.
-
-3. **UI Design**: Creating an appealing and readable UI that works well on different screen sizes required several iterations, especially for proper color contrast on the gradient background.
-
-4. **Location Permissions**: Although the current implementation uses a default city (Seattle), the groundwork for implementing the location-based weather feature was complex due to Android's permission system.
-
-## Resources Used
-
-### Official Documentation
-
-- [Android Developer Guides](https://developer.android.com/guide)
-- [Kotlin Documentation](https://kotlinlang.org/docs/home.html)
-- [OpenWeatherMap API Documentation](https://openweathermap.org/api)
-
-### Libraries and Tools
-
-- Retrofit/OkHttp for API calls (plans for future implementation)
-- Gson for JSON parsing
-- Material Components for UI elements
-
-### Online Resources
-
-- Stack Overflow:
-  - [Working with HttpURLConnection in Kotlin](https://stackoverflow.com/questions/46177133/httpurlconnection-in-kotlin)
-  - [Parsing JSON in Kotlin](https://stackoverflow.com/questions/41928803/how-to-parse-json-in-kotlin)
-  - [Android Gradient Backgrounds](https://stackoverflow.com/questions/2016249/how-to-generate-random-color-in-android)
-
-- Tutorials:
-  - [MVVM Architecture in Android](https://www.geeksforgeeks.org/mvvm-model-view-viewmodel-architecture-pattern-in-android/)
-  - [Weather App UI Design](https://www.behance.net/gallery/89849815/Weather-App-UI-Concept)
-  - [Making HTTP Requests on Android](https://www.tutorialspoint.com/making-http-requests-in-android)
-
-- GitHub Samples:
-  - [android-architecture-components](https://github.com/android/architecture-components-samples)
-
-## Future Improvements
-
-- Implement the bonus feature to show weather for the device's current location
-- Add a 5-day forecast
-- Add unit tests for better code reliability
-- Implement Retrofit for more elegant API calls
-- Add more weather icons for different conditions
-- Support for dark/light themes
-- Add more detailed weather information
+### Resources Used
+- OpenWeatherMap API documentation: https://openweathermap.org/current
+- Android Location API: https://developer.android.com/training/location
+- Retrofit: https://square.github.io/retrofit/
+- Stack Overflow and Android Developers documentation for troubleshooting and implementation guidance
