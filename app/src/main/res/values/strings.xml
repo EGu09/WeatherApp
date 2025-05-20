@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Weather App</string>
+
+    <!-- Search -->
+    <string name="edit_text_hint">Enter city name</string>
+    <string name="search">Search</string>
+
+    <!-- Default City -->
+    <string name="default_city">Seattle</string>
+
+    <!-- Weather Display -->
+    <string name="city">City Name</string>
+    <string name="date_time">Date and Time</string>
+    <string name="temperature">0°C</string>
+    <string name="temperature_format">%d°C</string>
+    <string name="sky_type">Clear Sky</string>
+    <string name="min_temp">Min: 0°C / Max: 0°C</string>
+    <string name="min_max_temp_format">Min: %d°C / Max: %d°C</string>
+
+    <!-- Sun times -->
+    <string name="sun_times_title">Sunrise &amp; Sunset</string>
+    <string name="time_sunrise">00:00 AM</string>
+    <string name="time_sunset">00:00 PM</string>
+    <string name="sunrise_format">%s</string>
+    <string name="sunset_format">%s</string>
+
+    <!-- Weather Details -->
+    <string name="weather_details_title">Weather Details</string>
+    <string name="time_wind">0 m/s</string>
+    <string name="time_humidity">0%%</string>
+    <string name="time_pressure">0 hPa</string>
+    <string name="wind_format">%.1f m/s</string>
+    <string name="humidity_format">%d%%</string>
+    <string name="pressure_format">%d hPa</string>
+
+    <!-- Error Messages -->
+    <string name="error_message">Something went wrong</string>
+    <string name="error_city_blank">Please enter a city name</string>
+    <string name="error_city_not_found">City not found</string>
+    <string name="error_something_wrong">Something went wrong</string>
+    <string name="error_no_internet">No internet connection</string>
+
+    <!-- Content Descriptions -->
+    <string name="weather_icon">Weather Icon</string>
+    <string name="sunrise_image">Sunrise</string>
+    <string name="sunset_image">Sunset</string>
+    <string name="wind_image">Wind</string>
+    <string name="humidity_image">Humidity</string>
+    <string name="pressure_image">Pressure</string>
+</resources>
